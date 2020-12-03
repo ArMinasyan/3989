@@ -1,7 +1,7 @@
 
-const { SendPinCode, VerifyPinCode } = require('../../helpers/Helper.Phone');
+const { SendPinCode, VerifyPinCode } = require('../../helpers/helper.phone');
 
-const { validationResult } = require('express-validator');
+
 
 module.exports.SendPhonePin = async (req, res, next) => {
     const code_state = await SendPinCode(req.body.phone);
