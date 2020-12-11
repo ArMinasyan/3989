@@ -1,5 +1,5 @@
 const Models = require('../../models/models');
-const { CreateToken } = require('../../helpers/helper.jwt');
+const { CreateToken } = require('../../helpers/Helper.JWT');
 
 module.exports = async (req, res) => {
     try {

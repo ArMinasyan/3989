@@ -23,6 +23,10 @@ const userSchema = new Schema({
     password: {
         type: String,
     },
+    profileImgPath: {
+        type: String
+    },
+    channelImgPaths: [],
     // confirmPass: {
     //     type: String
     // },

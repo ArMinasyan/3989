@@ -1,5 +1,5 @@
-const helpPassword = require('../../helpers/help.password');
-const sendEmail = require('../../helpers/sendEmail');
+const helpPassword = require('../../helpers/Helper.Password');
+const sendEmail = require('../../helpers/Helper.SendEmail');
 const Models = require('../../models/models');
 const SecurePin = require('crypto-random-string')
 const respFunc = require('../../respnseFuntions');

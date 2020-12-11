@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-
-
 const CreateToken = data => jwt.sign(data, process.env.JWT_KEY, {
     algorithm: 'HS384'
 });
@@ -9,8 +7,9 @@ const CreateToken = data => jwt.sign(data, process.env.JWT_KEY, {
 const VerifyToken = (req, res, next) => {
 
     const path = req.path;
-    if (req.authorization && req.authorization['token']) {
-        jwt.verify(req.cookies.token, process.env.JWT_KEY, {
+
+    if (req.headers.authorization && req.headers.authorization.split(' ')[0] == 'Bearer') {
+        jwt.verify(req.headers.authorization.split(' ')[1], process.env.JWT_KEY, {
             algorithms: ['HS384']
         },
             function (err, dec) {

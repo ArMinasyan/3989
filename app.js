@@ -4,6 +4,8 @@ const {
 } = require('http');
 const body_parser = require('body-parser');
 
+const { VerifyToken } = require('./helpers/Helper.JWT');
+
 const session = require('express-session');
 
 
@@ -37,7 +39,7 @@ app.post('/test', (req, res) => {
 });
 
 app.use('/api/auth', auth);
-app.use('/api/user', user);
+app.use('/api/user', VerifyToken, user);
 
 
 
